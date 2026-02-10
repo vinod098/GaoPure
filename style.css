@@ -319,6 +319,16 @@ h1, h2, h3, h4, h5, h6 {
 
 .hero-image {
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(74, 55, 40, 0.15);
 }
 
 .hero-image-placeholder {
@@ -783,25 +793,28 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .products-grid {
+    display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
+    gap: 25px;
     margin-bottom: 30px;
-    max-width: 800px;
+    max-width: 750px;
     margin-left: auto;
     margin-right: auto;
 }
 
 .product-card {
     background: var(--white);
-    border-radius: 25px;
+    border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 10px 40px rgba(74, 55, 40, 0.08);
     transition: var(--transition);
     position: relative;
+    display: flex;
+    flex-direction: column;
 }
 
 .product-card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-8px);
     box-shadow: 0 20px 50px rgba(74, 55, 40, 0.15);
 }
 
@@ -811,8 +824,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .product-badge {
     position: absolute;
-    top: 20px;
-    left: 20px;
+    top: 15px;
+    left: 15px;
     background: var(--gold);
     color: var(--white);
     font-size: 0.75rem;
@@ -831,8 +844,27 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .product-image {
-    padding: 40px;
-    background: var(--cream);
+    padding: 30px 20px;
+    background: linear-gradient(145deg, var(--cream), #fff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 220px;
+    overflow: hidden;
+}
+
+.product-image img {
+    max-width: 90%;
+    max-height: 180px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+    filter: drop-shadow(0 5px 15px rgba(0,0,0,0.1));
+}
+
+.product-card:hover .product-image img {
+    transform: scale(1.08);
 }
 
 .product-placeholder {
@@ -851,13 +883,17 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .product-info {
-    padding: 25px;
+    padding: 20px 25px 25px;
     text-align: center;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 .product-info h3 {
-    font-size: 1.2rem;
+    font-size: 1.15rem;
     margin-bottom: 5px;
+    color: var(--brown);
 }
 
 .product-size {
@@ -867,7 +903,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .product-price {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
+    margin-top: auto;
 }
 
 .price-current {

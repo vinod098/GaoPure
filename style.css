@@ -784,22 +784,18 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--white);
 }
 
-.product-category {
-    display: none;
-}
-
-.product-category.active {
-    display: grid;
-}
-
 .products-grid {
-    display: grid;
+    display: none;
     grid-template-columns: repeat(2, 1fr);
     gap: 25px;
     margin-bottom: 30px;
     max-width: 750px;
     margin-left: auto;
     margin-right: auto;
+}
+
+.products-grid.active {
+    display: grid;
 }
 
 .product-card {
